@@ -15,10 +15,10 @@ public class BowlingBall : MonoBehaviour
     void Update()
     {
         // Detect if the ball has been thrown based on its speed
-        if (!hasBeenThrown && rb != null && rb.velocity.magnitude > throwDetectionSpeed)
+        if (!hasBeenThrown && rb != null && rb.linearVelocity.magnitude > throwDetectionSpeed)
         {
             hasBeenThrown = true;
-            Debug.Log(gameObject.name + " has been Thrown! Speed: " + rb.velocity.magnitude);
+            Debug.Log(gameObject.name + " has been Thrown! Speed: " + rb.linearVelocity.magnitude);
         }
     }
 
@@ -31,7 +31,7 @@ public class BowlingBall : MonoBehaviour
     {
         hasBeenThrown = false;
 
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = false;
 

@@ -48,7 +48,7 @@ public class BowlingBallManager : MonoBehaviour
             if (allThrown)
             {
                 Debug.Log("All balls thrown! Respawning...");
-                yield return new WaitForSeconds(3f); // pause before respawn
+                yield return new WaitForSeconds(6f); // pause before respawn
                 RespawnBalls();
             }
         }
